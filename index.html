@@ -4,319 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Opik | Web Developer Portfolio</title>
-    <!-- Mengambil font modern dari Google Fonts -->
     <link href="https://googleapis.com" rel="stylesheet">
-    <!-- Mengambil ikon menarik dari Boxicons -->
     <link href="https://unpkg.com" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #121212;
-            --card-color: #1e1e1e;
-            --accent-color: #0070f3;
-            --accent-hover: #0051a8;
-            --text-main: #ffffff;
-            --text-muted: #a0a0a0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 700px;
-            margin: 40px auto;
-        }
-
-        /* Gaya Header / Profil */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-color);
-            box-shadow: 0 4px 20px rgba(0, 112, 243, 0.3);
-            margin-bottom: 15px;
-        }
-
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        header .subtitle {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        /* Gaya Kartu Konten */
-        section {
-            background-color: var(--card-color);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid #2e2e2e;
-        }
-
-        section h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        section p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        /* Gaya Grid untuk Skill */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .skill-card {
-            background-color: #2a2a2a;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.2s, background-color 0.2s;
-            border: 1px solid #3a3a3a;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            background-color: #333333;
-            border-color: var(--accent-color);
-        }
-
-        .skill-card i {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 8px;
-        }
-
-        .skill-card span {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Gaya List Sertifikasi */
-        .cert-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .cert-item {
-            background: #2a2a2a;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #3a3a3a;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        @media (min-width: 600px) {
-            .cert-item {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
-        .cert-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-align: left;
-        }
-
-        .cert-info i {
-            font-size: 2.5rem;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        .cert-info h3 {
-            font-size: 1rem;
-            margin-bottom: 2px;
-            line-height: 1.3;
-            color: #ffffff;
-        }
-
-        .cert-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin: 0;
-        }
-
-        .btn-cert {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: #e34f26;
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: opacity 0.2s;
-            align-self: flex-start;
-            flex-shrink: 0;
-        }
-
-        .btn-cert:hover {
-            opacity: 0.9;
-        }
-
-        /* Gaya Tombol Kontak */
-        .btn-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .btn-contact {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.2s, transform 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 112, 243, 0.4);
-        }
-
-        .btn-contact:hover {
-            background-color: var(--accent-hover);
-            transform: scale(1.03);
-        }
-
-        /* Gaya Footer */
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Responsif untuk HP */
-        @media (max-width: 480px) {
-            header h1 { font-size: 1.8rem; }
-            section { padding: 20px; }
-            .cert-info { gap: 10px; }
-        }
+        :root { --bg-color: #121212; --card-color: #1e1e1e; --accent-color: #0070f3; --accent-hover: #0051a8; --text-main: #ffffff; --text-muted: #a0a0a0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 20px; }
+        .container { max-width: 700px; margin: 40px auto; }
+        header { text-align: center; margin-bottom: 40px; }
+        .profile-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color); box-shadow: 0 4px 20px rgba(0, 112, 243, 0.3); margin-bottom: 15px; }
+        header h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; }
+        header .subtitle { color: var(--text-muted); font-size: 1rem; }
+        section { background-color: var(--card-color); border-radius: 12px; padding: 30px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); border: 1px solid #2e2e2e; }
+        section h2 { font-size: 1.4rem; margin-bottom: 15px; color: var(--accent-color); display: flex; align-items: center; gap: 10px; }
+        section p { color: var(--text-muted); font-size: 1rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-top: 15px; }
+        .skill-card { background-color: #2a2a2a; padding: 15px; border-radius: 8px; text-align: center; transition: transform 0.2s; border: 1px solid #3a3a3a; }
+        .skill-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+        .skill-card i { font-size: 2rem; color: var(--accent-color); margin-bottom: 8px; }
+        .skill-card span { display: block; font-size: 0.9rem; font-weight: 600; }
+        .cert-list { display: flex; flex-direction: column; gap: 15px; margin-top: 15px; }
+        .cert-item { background: #2a2a2a; padding: 15px; border-radius: 8px; border: 1px solid #3a3a3a; display: flex; flex-direction: column; gap: 15px; }
+        @media (min-width: 600px) { .cert-item { flex-direction: row; justify-content: space-between; align-items: center; } }
+        .cert-info { display: flex; align-items: center; gap: 15px; text-align: left; }
+        .cert-info i { font-size: 2.3rem; min-width: 35px; text-align: center; display: inline-block !important; }
+        .cert-info h3 { font-size: 1rem; margin-bottom: 2px; line-height: 1.3; color: #ffffff; }
+        .cert-info p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+        .btn-cert { display: inline-flex; align-items: center; gap: 5px; background: #e34f26; color: white; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; transition: opacity 0.2s; align-self: flex-start; flex-shrink: 0; }
+        .btn-cert:hover { opacity: 0.9; }
+        .btn-container { text-align: center; margin-top: 20px; }
+        .btn-contact { display: inline-flex; align-items: center; gap: 10px; background-color: var(--accent-color); color: white; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: 600; transition: background-color 0.2s, transform 0.2s; box-shadow: 0 4px 15px rgba(0, 112, 243, 0.4); }
+        .btn-contact:hover { background-color: var(--accent-hover); transform: scale(1.03); }
+        footer { text-align: center; margin-top: 50px; color: var(--text-muted); font-size: 0.85rem; }
+        @media (max-width: 480px) { header h1 { font-size: 1.8rem; } section { padding: 20px; } }
     </style>
 </head>
 <body>
-
     <div class="container">
-        
-        <!-- HEADER / PROFIL -->
         <header>
             <img src="pai.jpg.jpg" alt="Foto Profil Opik" class="profile-img">
             <h1>Halo, Saya Opik 👋</h1>
             <div class="subtitle">Junior Web Developer & Network Enthusiast</div>
         </header>
 
-        <!-- TENTANG SAYA -->
         <section id="tentang">
             <h2><i class='bx bx-user'></i> Tentang Saya</h2>
             <p>Halo, saya Opik! Seorang antusias teknologi yang sedang mendalami dunia <em>Web Development</em>. Saya senang membangun halaman web yang interaktif menggunakan HTML, CSS, dan JavaScript, serta mengeksplorasi konsep dasar jaringan komputer untuk memperluas wawasan digital saya.</p>
         </section>
 
-        <!-- KEAHLIAN / SKILL -->
         <section id="skill">
             <h2><i class='bx bx-code-alt'></i> Skill Saya</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <i class='bx bxl-html5' style="color: #e34f26;"></i>
-                    <span>HTML</span>
-                </div>
-                <div class="skill-card">
-                    <i class='bx bxl-css3' style="color: #1572b6;"></i>
-                    <span>CSS</span>
-                </div>
-                <div class="skill-card">
-                    <i class='bx bxl-javascript' style="color: #f7df1e;"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill-card">
-                    <i class='bx bx-server' style="color: #4caf50;"></i>
-                    <span>Jaringan Komputer</span>
-                </div>
+                <div class="skill-card"><i class='bx bxl-html5' style="color: #e34f26;"></i><span>HTML</span></div>
+                <div class="skill-card"><i class='bx bxl-css3' style="color: #1572b6;"></i><span>CSS</span></div>
+                <div class="skill-card"><i class='bx bxl-javascript' style="color: #f7df1e;"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class='bx bx-server' style="color: #4caf50;"></i><span>Jaringan Komputer</span></div>
             </div>
         </section>
 
-        <!-- PROYEK LATIHAN -->
         <section id="proyek">
             <h2><i class='bx bx-folder-open'></i> Proyek Saya</h2>
             <p>Saat ini saya sedang berfokus membangun portofolio pribadi ini dan bersiap mengembangkannya ke dalam proyek-proyek aplikasi web interaktif lainnya di masa mendatang.</p>
         </section>
 
-        <!-- SERTIFIKASI RED HAT ACADEMY -->
         <section id="sertifikasi">
             <h2><i class='bx bx-award'></i> Sertifikasi & Kursus</h2>
             <div class="cert-list">
-                
-                <!-- 1. RH294 -->
                 <div class="cert-item">
-                    <div class="cert-info">
-                        <i class='bx bxl-redhat' style="color: #cc0000;"></i>
-                        <div>
-                            <h3>Red Hat Enterprise Linux Automation with Ansible 9.0 (RH294)</h3>
-                            <p>Red Hat Academy &bull; Agu 2026</p>
-                        </div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert">
-                        <i class='bx bx-certification'></i> Kredensial
-                    </a>
+                    <div class="cert-info"><i class='bx bxl-redhat' style="color: #cc0000;"></i><div><h3>Red Hat Enterprise Linux Automation with Ansible 9.0 (RH294)</h3><p>Red Hat Academy &bull; Agu 2026</p></div></div>
+                    <a href="https://credly.com" target="_blank" class="btn-cert"><i class='bx bx-certification'></i> Kredensial</a>
                 </div>
-
-                <!-- 2. RH134 -->
                 <div class="cert-item">
-                    <div class="cert-info">
-                        <i class='bx bxl-redhat' style="color: #cc0000;"></i>
-                        <div>
-                            <h3>Red Hat System Administration II 9.3 (RH134)</h3>
-                            <p>Red Hat Academy &bull; Nov 2025</p>
-                        </div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert">
-                        <i class='bx bx-certification'></i> Kredensial
-                    </a>
+                    <div class="cert-info"><i class='bx bxl-redhat' style="color: #cc0000;"></i><div><h3>Red Hat System Administration II 9.3 (RH134)</h3><p>Red Hat Academy &bull; Nov 2025</p></div></div>
+                    <a href="https://credly.com" target="_blank" class="btn-cert"><i class='bx bx-certification'></i> Kredensial</a>
                 </div>
-
-                <!-- 3. AD141 -->
                 <div class="cert-item">
-                    <div class="cert-info">
-                        <i class='bx bxl-python' style="color: #3776ab;"></i>
-                        <div>
+                    <div class="cert-info"><i class='bx bxl-python' style="color: #3776ab;"></i><div><h3>Introduction to Python Programming 9.0 (AD141)</h3><p>Red Hat Academy &bull; Okt 2025</p></div></div>
+                    <a href="https://credly.com" target="_blank" class="btn-cert"><i class='bx bx-certification'></i> Kredensial</a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-info"><i class='bx bx-terminal' style="color: #f1bd1a;"></i><div><h3>Getting Started with Linux Fundamentals 9.1 (RH104)</h3><p>Red Hat Academy &bull; Okt 2025</p></div></div>
+                    <a href="https://credly.com" target="_blank" class="btn-cert"><i class='bx bx-certification'></i> Kredensial</a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-info"><i class='bx bxl-redhat' style="color: #cc0000;"></i><div><h3>Red Hat System Administration I 9.3 (RH124)</h3><p>Red Hat Academy &bull; Okt 2025</p></div></div>
+                    <a href="https://credly.com" target="_blank" class="btn-cert"><i class='bx bx-certification'></i> Kredensial</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak">
+            <h2><i class='bx bx-envelope'></i> Kontak</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Tertarik untuk berkolaborasi atau sekadar menyapa? Silakan klik tombol di bawah ini.</p>
+            <div class="btn-container"><a href="mailto:opikpratamaputra19@gmail.com" class="btn-contact"><i class='bx bx-mail-send'></i> Hubungi Saya</a></div>
+        </section>
+
+        <footer><p>&copy; 2026 Website Opik. Dibuat dengan <i class='bx bxs-heart' style="color: #ff4d4d;"></i> untuk belajar.</p></footer>
+    </div>
+</body>
+</html>
