@@ -138,7 +138,7 @@
             border: 1px solid #3a3a3a;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
 
         @media (min-width: 600px) {
@@ -153,12 +153,20 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            text-align: left;
+        }
+
+        .cert-info i {
+            font-size: 2.5rem;
+            min-width: 40px;
+            text-align: center;
         }
 
         .cert-info h3 {
             font-size: 1rem;
             margin-bottom: 2px;
             line-height: 1.3;
+            color: #ffffff;
         }
 
         .cert-info p {
@@ -180,6 +188,7 @@
             font-weight: 600;
             transition: opacity 0.2s;
             align-self: flex-start;
+            flex-shrink: 0;
         }
 
         .btn-cert:hover {
@@ -223,6 +232,7 @@
         @media (max-width: 480px) {
             header h1 { font-size: 1.8rem; }
             section { padding: 20px; }
+            .cert-info { gap: 10px; }
         }
     </style>
 </head>
@@ -280,7 +290,7 @@
                 <!-- 1. RH294 -->
                 <div class="cert-item">
                     <div class="cert-info">
-                        <i class='bx bxl-redhat' style="font-size: 2.5rem; color: #cc0000;"></i>
+                        <i class='bx bxl-redhat' style="color: #cc0000;"></i>
                         <div>
                             <h3>Red Hat Enterprise Linux Automation with Ansible 9.0 (RH294)</h3>
                             <p>Red Hat Academy &bull; Agu 2026</p>
@@ -294,14 +304,13 @@
                 <!-- 2. RH134 -->
                 <div class="cert-item">
                     <div class="cert-info">
-                        <i class='bx bxl-redhat' style="font-size: 2.5rem; color: #cc0000;"></i>
+                        <i class='bx bxl-redhat' style="color: #cc0000;"></i>
                         <div>
                             <h3>Red Hat System Administration II 9.3 (RH134)</h3>
                             <p>Red Hat Academy &bull; Nov 2025</p>
                         </div>
                     </div>
-                    <!-- Silakan ganti '#' di bawah dengan link Credly lencana RH134 jika ada -->
-                    <a href="#" target="_blank" class="btn-cert">
+                    <a href="https://credly.com" target="_blank" class="btn-cert">
                         <i class='bx bx-certification'></i> Kredensial
                     </a>
                 </div>
@@ -309,7 +318,5 @@
                 <!-- 3. AD141 -->
                 <div class="cert-item">
                     <div class="cert-info">
-                        <i class='bx bxl-python' style="font-size: 2.5rem; color: #3776ab;"></i>
+                        <i class='bx bxl-python' style="color: #3776ab;"></i>
                         <div>
-                            <h3>Introduction to Python Programming 9.0 (AD141)</h3>
-                            <p>Red Hat Academy &bull; Okt 2025</p>
