@@ -123,7 +123,70 @@
             font-weight: 600;
         }
 
-        /* Gaya Tombol Kontak & Sertifikasi */
+        /* Gaya List Sertifikasi */
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .cert-item {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #3a3a3a;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        @media (min-width: 600px) {
+            .cert-item {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .cert-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cert-info h3 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        .cert-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .btn-cert {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #e34f26;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+            align-self: flex-start;
+        }
+
+        .btn-cert:hover {
+            opacity: 0.9;
+        }
+
+        /* Gaya Tombol Kontak */
         .btn-container {
             text-align: center;
             margin-top: 20px;
@@ -209,40 +272,44 @@
             <p>Saat ini saya sedang berfokus membangun portofolio pribadi ini dan bersiap mengembangkannya ke dalam proyek-proyek aplikasi web interaktif lainnya di masa mendatang.</p>
         </section>
 
-        <!-- SERTIFIKASI (Sekarang Berada di Dalam Body Kode) -->
+        <!-- SERTIFIKASI RED HAT ACADEMY -->
         <section id="sertifikasi">
-            <h2><i class='bx bx-award'></i> Sertifikasi</h2>
-            <div style="background: #2a2a2a; padding: 20px; border-radius: 8px; border: 1px solid #3a3a3a; margin-top: 15px;">
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <i class='bx bxl-redhat' style="font-size: 2.8rem; color: #cc0000;"></i>
-                    <div>
-                        <h3 style="font-size: 1.1rem; margin-bottom: 2px; line-height: 1.3;">Red Hat Enterprise Linux Automation with Ansible (RH294)</h3>
-                        <p style="font-size: 0.9rem; color: #a0a0a0; margin: 0;">Red Hat Academy &bull; Agu 2026</p>
+            <h2><i class='bx bx-award'></i> Sertifikasi & Kursus</h2>
+            <div class="cert-list">
+                
+                <!-- 1. RH294 -->
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <i class='bx bxl-redhat' style="font-size: 2.5rem; color: #cc0000;"></i>
+                        <div>
+                            <h3>Red Hat Enterprise Linux Automation with Ansible 9.0 (RH294)</h3>
+                            <p>Red Hat Academy &bull; Agu 2026</p>
+                        </div>
                     </div>
+                    <a href="https://credly.com" target="_blank" class="btn-cert">
+                        <i class='bx bx-certification'></i> Kredensial
+                    </a>
                 </div>
-                <a href="https://credly.com" target="_blank" style="display: inline-flex; align-items: center; gap: 5px; background: #e34f26; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; transition: background 0.2s; margin-top: 10px; box-shadow: 0 4px 10px rgba(227, 79, 38, 0.2);">
-                    <i class='bx bx-certification'></i> Lihat Kredensial Resmi
-                </a>
-            </div>
-        </section>
 
-        <!-- KONTAK -->
-        <section id="kontak">
-            <h2><i class='bx bx-envelope'></i> Kontak</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Tertarik untuk berkolaborasi atau sekadar menyapa? Silakan klik tombol di bawah ini.</p>
-            <div class="btn-container">
-                <a href="mailto:opikpratamaputra19@gmail.com" class="btn-contact">
-                    <i class='bx bx-mail-send'></i> Hubungi Saya
-                </a>
-            </div>
-        </section>
+                <!-- 2. RH134 -->
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <i class='bx bxl-redhat' style="font-size: 2.5rem; color: #cc0000;"></i>
+                        <div>
+                            <h3>Red Hat System Administration II 9.3 (RH134)</h3>
+                            <p>Red Hat Academy &bull; Nov 2025</p>
+                        </div>
+                    </div>
+                    <!-- Silakan ganti '#' di bawah dengan link Credly lencana RH134 jika ada -->
+                    <a href="#" target="_blank" class="btn-cert">
+                        <i class='bx bx-certification'></i> Kredensial
+                    </a>
+                </div>
 
-        <!-- FOOTER -->
-        <footer>
-            <p>&copy; 2026 Website Opik. Dibuat dengan <i class='bx bxs-heart' style="color: #ff4d4d;"></i> untuk belajar.</p>
-        </footer>
-
-    </div>
-
-</body>
-</html>
+                <!-- 3. AD141 -->
+                <div class="cert-item">
+                    <div class="cert-info">
+                        <i class='bx bxl-python' style="font-size: 2.5rem; color: #3776ab;"></i>
+                        <div>
+                            <h3>Introduction to Python Programming 9.0 (AD141)</h3>
+                            <p>Red Hat Academy &bull; Okt 2025</p>
