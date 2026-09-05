@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OPIK | Enterprise Cyber Systems & Web Application</title>
-    <!-- Font & Ikon Premium Terlengkap -->
     <link href="https://googleapis.com" rel="stylesheet">
-    <link href="https://cloudflare.com" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #060913;
-            --panel-bg: rgba(15, 23, 42, 0.65);
+            --panel-bg: rgba(15, 23, 42, 0.85);
             --neon-blue: #00f2ff;
             --neon-red: #ff0055;
             --neon-green: #10b981;
             --text-cyan: #38bdf8;
-            --glass-border: rgba(56, 189, 248, 0.15);
+            --border: #1e293b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,25 +22,23 @@
         body {
             background-color: var(--bg-dark);
             color: #f1f5f9;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             padding: 20px;
             overflow-x: hidden;
             background-image: 
                 radial-gradient(at 0% 0%, rgba(0, 242, 255, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(255, 0, 85, 0.05) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.02) 0px, transparent 50%);
+                radial-gradient(at 100% 100%, rgba(255, 0, 85, 0.05) 0px, transparent 50%);
         }
 
-        .container { max-width: 750px; margin: 50px auto; }
+        .container { max-width: 750px; margin: 40px auto; }
 
         /* Tech Header Frame */
         header {
             background: var(--panel-bg);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--border);
             border-radius: 24px;
             padding: 45px 35px;
             text-align: center;
-            backdrop-filter: blur(12px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             margin-bottom: 35px;
             position: relative;
@@ -54,24 +50,23 @@
         }
 
         .profile-frame { position: relative; width: 130px; height: 130px; margin: 0 auto 25px; }
-        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid #0f172a; box-shadow: 0 0 25px rgba(0, 242, 255, 0.25); }
-        .tech-pulse { position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px; border: 2px dashed var(--neon-blue); border-radius: 50%; animation: rotatePulse 20s linear infinite; }
+        .profile-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--neon-blue); box-shadow: 0 0 25px rgba(0, 242, 255, 0.25); }
 
         header h1 {
-            font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px;
+            font-size: 2.5rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 10px;
             background: linear-gradient(135deg, #fff 40%, var(--neon-blue));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
         .code-tag {
-            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-cyan);
+            font-size: 0.9rem; color: var(--text-cyan);
             background: rgba(56, 189, 248, 0.08); padding: 5px 15px; border-radius: 20px; display: inline-block;
         }
 
         /* Glassmorphism Section */
         section {
-            background: var(--panel-bg); border: 1px solid var(--glass-border); border-radius: 24px;
-            padding: 35px; margin-bottom: 35px; backdrop-filter: blur(12px); transition: all 0.4s ease;
+            background: var(--panel-bg); border: 1px solid var(--border); border-radius: 24px;
+            padding: 35px; margin-bottom: 35px; transition: all 0.4s ease;
         }
 
         section:hover {
@@ -80,62 +75,60 @@
         }
 
         section h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; }
-        section h2 i { color: var(--neon-blue); }
         section p { color: #94a3b8; font-size: 1rem; line-height: 1.7; }
 
         /* Grid Skill Terminal */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 20px; }
-        .skill-card { background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 20px 10px; border-radius: 12px; text-align: center; transition: all 0.3s; }
-        .skill-card:hover { background: #0f172a; border-color: var(--neon-blue); transform: scale(1.04); box-shadow: 0 0 15px rgba(0, 242, 255, 0.15); }
-        .skill-card i { font-size: 2.2rem; margin-bottom: 10px; display: block; }
-        .skill-card span { font-size: 0.9rem; font-weight: 600; display: block; font-family: 'JetBrains Mono', monospace; }
+        .skill-card { background: #1e293b; padding: 20px 10px; border-radius: 12px; text-align: center; transition: all 0.3s; border: 1px solid transparent; }
+        .skill-card:hover { background: #0f172a; border-color: var(--neon-blue); transform: scale(1.04); }
+        .skill-card .icon-placeholder { font-size: 2rem; margin-bottom: 8px; display: block; }
+        .skill-card span { font-size: 0.9rem; font-weight: 600; display: block; color: #e2e8f0; }
 
         /* List Jasa / Services */
         .svc-container { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-        .svc-card { background: rgba(30, 41, 59, 0.3); border-radius: 12px; padding: 20px; border-left: 4px solid var(--neon-blue); border-top: 1px solid rgba(255,255,255,0.02); border-right: 1px solid rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.02); }
+        .svc-card { background: #1e293b; padding: 20px; border-radius: 12px; border-left: 4px solid var(--neon-blue); border-top: 1px solid rgba(255,255,255,0.02); }
         .svc-title { font-size: 1.1rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
         .svc-desc { font-size: 0.92rem; color: #94a3b8; }
 
         /* Portofolio Project Cards */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
-        .project-card { background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 25px; transition: all 0.3s; }
-        .project-card:hover { border-color: var(--neon-green); background: rgba(30, 41, 59, 0.5); }
-        .project-status { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--neon-green); background: rgba(16, 185, 129, 0.1); padding: 2px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px; }
+        .project-card { background: #1e293b; border: 1px solid rgba(255,255,255,0.05); border-radius: 14px; padding: 25px; transition: all 0.3s; }
+        .project-card:hover { border-color: var(--neon-green); }
+        .project-status { font-size: 0.75rem; color: var(--neon-green); background: rgba(16, 185, 129, 0.1); padding: 2px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px; font-weight: bold; }
         .project-title { font-size: 1.1rem; color: #fff; font-weight: 600; margin-bottom: 8px; }
-        .project-tech { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--text-cyan); margin-top: 15px; }
+        .project-tech { font-size: 0.8rem; color: var(--text-cyan); margin-top: 15px; font-weight: bold; }
 
         /* Alur Pendidikan & Karier (Timeline) */
         .timeline { position: relative; padding-left: 30px; margin-top: 20px; }
         .timeline::before { content: ''; position: absolute; left: 8px; top: 5px; bottom: 5px; width: 2px; background: rgba(56, 189, 248, 0.2); }
         .timeline-item { position: relative; margin-bottom: 30px; }
         .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--neon-blue); box-shadow: 0 0 8px var(--neon-blue); }
-        .time-date { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text-cyan); margin-bottom: 4px; }
+        .time-date { font-size: 0.85rem; color: var(--text-cyan); margin-bottom: 4px; font-weight: bold; }
         .time-title { font-size: 1.05rem; font-weight: 600; color: #fff; }
         .time-desc { font-size: 0.9rem; color: #94a3b8; margin-top: 4px; }
 
         /* Tabel Paket Harga Bisnis */
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-        .price-card { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; text-align: center; position: relative; overflow: hidden; }
+        .price-card { background: #0f172a; border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; padding: 25px; text-align: center; }
         .price-card.popular { border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(0, 242, 255, 0.1); }
-        .price-tag { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: #fff; font-weight: 700; margin: 15px 0; }
+        .price-tag { font-size: 1.5rem; color: #fff; font-weight: 700; margin: 15px 0; }
         .price-features { list-style: none; text-align: left; font-size: 0.85rem; color: #94a3b8; margin-bottom: 20px; }
         .price-features li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .price-features li i { color: var(--neon-green); font-size: 0.8rem; }
 
         /* List Sertifikasi System */
         .cert-container { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-        .cert-box { background: rgba(30, 41, 59, 0.3); border-radius: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.03); border-left: 4px solid var(--neon-red); display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; }
+        .cert-box { background: #1e293b; padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.03); border-left: 4px solid var(--neon-red); display: flex; flex-direction: column; gap: 15px; transition: all 0.3s; }
         .cert-box:hover { background: rgba(30, 41, 59, 0.6); }
         .cert-box.python { border-left-color: #3776ab; }
         .cert-box.linux { border-left-color: #fbbf24; }
         @media (min-width: 600px) { .cert-box { flex-direction: row; justify-content: space-between; align-items: center; } }
         .cert-meta { display: flex; align-items: center; gap: 15px; }
-        .cert-meta i { font-size: 2.2rem; }
+        .cert-meta .cert-logo { font-size: 2.2rem; }
         .cert-info h4 { font-size: 0.98rem; font-weight: 600; color: #f8fafc; line-height: 1.4; }
         .cert-info p { font-size: 0.85rem; color: #64748b; margin-top: 2px; }
 
         /* Tombol Aksi Kredensial */
-        .btn-action { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 22px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s; flex-shrink: 0; align-self: flex-start; }
+        .btn-action { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; padding: 10px 22px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s; flex-shrink: 0; align-self: flex-start; }
         .btn-redhat { background: linear-gradient(135deg, #ff0055, #990033); color: #fff; box-shadow: 0 4px 15px rgba(255,0,85,0.25); }
         .btn-python { background: linear-gradient(135deg, #3776ab, #1f425f); color: #fff; box-shadow: 0 4px 15px rgba(55,118,171,0.25); }
         .btn-linux { background: linear-gradient(135deg, #fbbf24, #b45309); color: #000; box-shadow: 0 4px 15px rgba(251,191,36,0.25); }
@@ -143,3 +136,19 @@
 
         /* Kontak Master Panel */
         .contact-block { text-align: center; }
+        .btn-master-contact { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; background: linear-gradient(135deg, #00f2ff, #0070f3); color: #0b0f19; padding: 16px 40px; border-radius: 12px; font-weight: 700; font-size: 1rem; box-shadow: 0 0 30px rgba(0, 242, 255, 0.35); transition: all 0.3s ease; width: 100%; max-width: 320px; justify-content: center; margin-bottom: 15px; }
+        .btn-master-contact:hover { transform: translateY(-3px); box-shadow: 0 0 45px rgba(0, 242, 255, 0.55); }
+        
+        .btn-wa-contact { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 14px 40px; border-radius: 12px; font-weight: 700; font-size: 1rem; box-shadow: 0 0 25px rgba(16, 185, 129, 0.25); transition: all 0.3s ease; width: 100%; max-width: 320px; justify-content: center; }
+        .btn-wa-contact:hover { transform: translateY(-3px); box-shadow: 0 0 40px rgba(16, 185, 129, 0.45); }
+
+        footer { text-align: center; margin-top: 60px; color: #475569; font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 25px; }
+        @media (max-width: 480px) { header h1 { font-size: 2rem; } section { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- FRAME PROFIL UTAMA -->
+        <header>
+            <div class="profile-frame">
