@@ -36,7 +36,7 @@
         .btn-cert { display: inline-flex; align-items: center; background: #e34f26; color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; flex-shrink: 0; align-self: flex-start; }
         .btn-cert:hover { opacity: 0.9; }
         .btn-container { text-align: center; margin-top: 10px; }
-        .btn-contact { display: inline-flex; background: var(--accent); color: white; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3); }
+        .btn-contact { display: inline-flex; background: var(--accent); color: white; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3); text-align: center; justify-content: center; width: 100%; max-width: 250px; margin: 0 auto; }
         .btn-contact:hover { transform: translateY(-2px); }
         footer { text-align: center; margin-top: 50px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 15px; }
     </style>
@@ -44,20 +44,20 @@
 <body>
     <div class="container">
         
-        <!-- HEADER -->
+        <!-- HEADER / PROFIL -->
         <header>
             <img src="pai.jpg.jpg" alt="Foto Profil Opik" class="profile-img">
             <h1>Halo, Saya Opik 👋</h1>
             <div class="subtitle">Junior Web Developer & Network Enthusiast</div>
         </header>
 
-        <!-- TENTANG -->
+        <!-- TENTANG SAYA -->
         <section id="tentang">
             <h2>👤 Tentang Saya</h2>
             <p>Halo, saya Opik! Seorang antusias teknologi yang sedang mendalami dunia <em>Web Development</em>. Saya senang membangun halaman web yang interaktif menggunakan HTML, CSS, dan JavaScript, serta mengeksplorasi konsep dasar jaringan komputer untuk memperluas wawasan digital saya.</p>
         </section>
 
-        <!-- SKILL -->
+        <!-- KEAHLIAN / SKILL -->
         <section id="skill">
             <h2>💻 Keahlian Teknologi</h2>
             <div class="skills-grid">
@@ -68,17 +68,18 @@
             </div>
         </section>
 
-        <!-- PROYEK -->
+        <!-- PROYEK LATIHAN -->
         <section id="proyek">
             <h2>📂 Proyek Mandiri</h2>
             <p>Saat ini saya sedang berfokus merancang portofolio profesional ini dan bersiap mengembangkannya ke dalam proyek aplikasi web yang lebih dinamis serta interaktif di masa depan.</p>
         </section>
 
-        <!-- SERTIFIKASI -->
+        <!-- SERTIFIKASI RED HAT ACADEMY -->
         <section id="sertifikasi">
             <h2>🏆 Kredensial Red Hat Academy</h2>
             <div class="cert-list">
-                <!-- 1 -->
+                
+                <!-- 1. RH294 -->
                 <div class="cert-item">
                     <div>
                         <div class="cert-title">Linux Automation with Ansible 9.0 (RH294)</div>
@@ -86,7 +87,8 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
                 </div>
-                <!-- 2 -->
+
+                <!-- 2. RH134 -->
                 <div class="cert-item">
                     <div>
                         <div class="cert-title">Red Hat System Administration II 9.3 (RH134)</div>
@@ -94,7 +96,8 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
                 </div>
-                <!-- 3 -->
+
+                <!-- 3. AD141 -->
                 <div class="cert-item python">
                     <div>
                         <div class="cert-title">Introduction to Python Programming 9.0 (AD141)</div>
@@ -102,7 +105,8 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert" style="background: #3776ab;">Verifikasi</a>
                 </div>
-                <!-- 4 -->
+
+                <!-- 4. RH104 -->
                 <div class="cert-item linux">
                     <div>
                         <div class="cert-title">Getting Started with Linux Fundamentals 9.1 (RH104)</div>
@@ -110,7 +114,8 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert" style="background: #fbbf24; color: #000;">Verifikasi</a>
                 </div>
-                <!-- 5 -->
+
+                <!-- 5. RH124 -->
                 <div class="cert-item">
                     <div>
                         <div class="cert-title">Red Hat System Administration I 9.3 (RH124)</div>
@@ -118,21 +123,24 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
                 </div>
+
             </div>
         </section>
 
         <!-- KONTAK -->
         <section id="kontak">
             <h2>✉️ Hubungan Kontak</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Tertarik untuk berkolaborasi atau sekadar membangun jaringan profesi? Silakan hubungi saya.</p>
+            <p style="text-align: center; margin-bottom: 25px;">Tertarik untuk berkolaborasi atau sekadar membangun jaringan profesi? Silakan hubungi saya.</p>
             <div class="btn-container">
                 <a href="mailto:opikpratamaputra19@gmail.com" class="btn-contact">Hubungi Saya Sekarang</a>
             </div>
         </section>
 
+        <!-- FOOTER -->
         <footer>
             <p>&copy; 2026 Portofolio Opik. Dibuat dengan HTML & CSS.</p>
         </footer>
+
     </div>
 </body>
 </html>
