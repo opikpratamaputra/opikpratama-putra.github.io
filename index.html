@@ -3,161 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Opik | Web Developer Portfolio</title>
+    <title>Opik | Premium Cyber Portfolio</title>
+    <!-- Font & Ikon Premium Terlengkap -->
     <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://cloudflare.com" rel="stylesheet">
     <style>
         :root {
-            --bg: #0b0f19;
-            --card: #131c2e;
-            --accent: #0070f3;
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --border: #1e293b;
+            --bg-dark: #060913;
+            --panel-bg: rgba(15, 23, 42, 0.65);
+            --neon-blue: #00f2ff;
+            --neon-red: #ff0055;
+            --text-cyan: #38bdf8;
+            --glass-border: rgba(56, 189, 248, 0.15);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); padding: 20px; line-height: 1.6; }
-        .container { max-width: 650px; margin: 40px auto; }
-        header { text-align: center; margin-bottom: 35px; }
-        .profile-img { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); margin-bottom: 15px; }
-        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 5px; }
-        header .subtitle { color: var(--muted); font-size: 0.95rem; }
-        section { background-color: var(--card); border-radius: 12px; padding: 25px; margin-bottom: 25px; border: 1px solid var(--border); }
-        section h2 { font-size: 1.25rem; margin-bottom: 15px; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
-        section p { color: var(--muted); font-size: 0.95rem; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 15px; }
-        .skill-card { background: #1e293b; padding: 12px; border-radius: 8px; text-align: center; font-size: 0.9rem; font-weight: 600; color: #e2e8f0; }
-        
-        /* Gaya List Layanan Jasa */
-        .services-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        .service-item { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid var(--border); }
-        .service-title { font-size: 1rem; font-weight: 600; color: #ffffff; margin-bottom: 4px; }
-        .service-desc { font-size: 0.88rem; color: var(--muted); }
 
-        .cert-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
-        .cert-item { background: #1e293b; padding: 15px; border-radius: 8px; border-left: 4px solid #cc0000; display: flex; flex-direction: column; gap: 10px; }
-        .cert-item.python { border-left-color: #3776ab; }
-        .cert-item.linux { border-left-color: #fbbf24; }
-        @media (min-width: 500px) { .cert-item { flex-direction: row; justify-content: space-between; align-items: center; } }
-        .cert-title { font-size: 0.95rem; font-weight: 600; color: #ffffff; margin-bottom: 2px; }
-        .cert-meta { font-size: 0.85rem; color: var(--muted); }
-        .btn-cert { display: inline-flex; align-items: center; background: #e34f26; color: white; text-decoration: none; padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; flex-shrink: 0; align-self: flex-start; }
-        .btn-cert:hover { opacity: 0.9; }
-        .btn-container { text-align: center; margin-top: 10px; }
-        .btn-contact { display: inline-flex; background: var(--accent); color: white; text-decoration: none; padding: 12px 30px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3); text-align: center; justify-content: center; width: 100%; max-width: 250px; margin: 0 auto; }
-        .btn-contact:hover { transform: translateY(-2px); }
-        footer { text-align: center; margin-top: 50px; color: var(--muted); font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 15px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 20px;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 242, 255, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(255, 0, 85, 0.05) 0px, transparent 50%);
+        }
+
+        .container { max-width: 700px; margin: 50px auto; }
+
+        /* Tech Header Frame */
+        header {
+            background: var(--panel-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        header::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 100px; height: 3px; background: linear-gradient(90deg, var(--neon-blue), var(--neon-red));
+        }
+
+        .profile-frame {
+            position: relative; width: 125px; height: 125px; margin: 0 auto 20px;
+        }
+
+        .profile-img {
+            width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+            border: 2px solid #0f172a; box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+
+        .tech-pulse {
+            position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border: 2px dashed var(--neon-blue); border-radius: 50%;
+            animation: rotatePulse 20s linear infinite;
+        }
+
+        header h1 {
+            font-size: 2.5rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 40%, var(--neon-blue));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .code-tag {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-cyan);
+            background: rgba(56, 189, 248, 0.08); padding: 4px 12px; border-radius: 20px; display: inline-block;
+        }
+
+        /* Glassmorphism Section */
+        section {
+            background: var(--panel-bg); border: 1px solid var(--glass-border); border-radius: 20px;
+            padding: 30px; margin-bottom: 35px; backdrop-filter: blur(12px); transition: all 0.4s ease;
+        }
+
+        section:hover {
+            border-color: rgba(56, 189, 248, 0.3); transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.05);
+        }
+
+        section h2 {
+            font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 12px;
+        }
+
+        section h2 i { color: var(--neon-blue); font-size: 1.1rem; }
+
+        section p { color: #94a3b8; font-size: 1rem; line-height: 1.7; }
+
+        /* Grid Skill Terminal */
+        .skills-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 20px;
+        }
+
+        .skill-card {
+            background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255,255,255,0.05);
+            padding: 18px 10px; border-radius: 12px; text-align: center; transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            background: #0f172a; border-color: var(--neon-blue); transform: scale(1.03);
+        }
+
+        .skill-card i { font-size: 2rem; margin-bottom: 10px; display: block; }
+        .skill-card span { font-size: 0.9rem; font-weight: 600; display: block; font-family: 'JetBrains Mono', monospace; }
+
+        /* List Jasa / Services */
+        .svc-container { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .svc-card {
+            background: rgba(30, 41, 59, 0.3); border-radius: 12px; padding: 20px; border-left: 4px solid var(--neon-blue);
+        }
+        .svc-title { font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
+        .svc-desc { font-size: 0.9rem; color: #94a3b8; }
+
+        /* List Sertifikasi System */
+        .cert-container { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        
+        .cert-box {
+            background: rgba(30, 41, 59, 0.3); border-radius: 12px; padding: 20px;
+            border: 1px solid rgba(255,255,255,0.03); border-left: 4px solid var(--neon-red);
+            display: flex; flex-direction: column; gap: 15px; transition: all 0.3s;
+        }
+
+        .cert-box:hover { background: rgba(30, 41, 59, 0.6); }
+        .cert-box.python { border-left-color: #3776ab; }
+        .cert-box.linux { border-left-color: #fbbf24; }
+
+        @media (min-width: 600px) {
+            .cert-box { flex-direction: row; justify-content: space-between; align-items: center; }
+        }
+
+        .cert-meta { display: flex; align-items: center; gap: 15px; }
+        .cert-meta i { font-size: 2.2rem; }
+        .cert-info h4 { font-size: 0.98rem; font-weight: 600; color: #f8fafc; line-height: 1.4; }
+        .cert-info p { font-size: 0.85rem; color: #64748b; margin-top: 2px; }
+
+        /* Tombol Aksi */
+        .btn-action {
+            display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+            padding: 10px 22px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+            font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.5px;
+            transition: all 0.3s; flex-shrink: 0; align-self: flex-start;
+        }
+
+        .btn-redhat { background: linear-gradient(135deg, #ff0055, #990033); color: #fff; box-shadow: 0 4px 15px rgba(255,0,85,0.25); }
+        .btn-redhat:hover { opacity: 0.9; transform: scale(1.02); }
+        
+        .btn-python { background: linear-gradient(135deg, #3776ab, #1f425f); color: #fff; box-shadow: 0 4px 15px rgba(55,118,171,0.25); }
+        .btn-python:hover { opacity: 0.9; transform: scale(1.02); }
+
+        .btn-linux { background: linear-gradient(135deg, #fbbf24, #b45309); color: #000; box-shadow: 0 4px 15px rgba(251,191,36,0.25); }
+        .btn-linux:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Kontak Master */
+        .contact-block { text-align: center; }
+        .btn-master-contact {
+            display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
+            background: linear-gradient(135deg, #00f2ff, #0070f3); color: #0b0f19;
+            padding: 16px 40px; border-radius: 12px; font-weight: 700; font-size: 1rem;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.35); transition: all 0.3s ease;
+            width: 100%; max-width: 320px; justify-content: center;
+        }
+
+        .btn-master-contact:hover {
+            transform: translateY(-3px); box-shadow: 0 0 45px rgba(0, 242, 255, 0.55);
+        }
+
+        footer {
+            text-align: center; margin-top: 60px; color: #475569; font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace; border-top: 1px solid var(--glass-border); padding-top: 25px;
+        }
+
+        @keyframes rotatePulse { 100% { transform: rotate(360deg); } }
+        @media (max-width: 480px) { header h1 { font-size: 2rem; } section { padding: 20px; } }
     </style>
 </head>
 <body>
+
     <div class="container">
         
-        <!-- HEADER / PROFIL -->
+        <!-- FRAME PROFIL UTAMA -->
         <header>
-            <img src="pai.jpg.jpg" alt="Foto Profil Opik" class="profile-img">
-            <h1>Halo, Saya Opik 👋</h1>
-            <div class="subtitle">Web Developer & Linux System Administrator</div>
+            <div class="profile-frame">
+                <div class="tech-pulse"></div>
+                <img src="pai.jpg.jpg" alt="Foto Profil Opik" class="profile-img">
+            </div>
+            <h1>OPIK PRATAMA PUTRA</h1>
+            <div class="code-tag">&lt; System Engineer & Web Developer /&gt;</div>
         </header>
 
-        <!-- TENTANG SAYA -->
+        <!-- INTRO TENTANG SAYA -->
         <section id="tentang">
-            <h2>👤 Tentang Saya</h2>
-            <p>Halo, saya Opik! Seorang antusias teknologi yang bergerak di bidang <em>Web Development</em> dan Administrasi Sistem. Dengan bekal sertifikasi internasional dari Red Hat Academy, saya berfokus pada pembangunan infrastruktur web yang stabil, otomasi server menggunakan Ansible, serta pembuatan halaman website yang interaktif.</p>
+            <h2><i class="fa-solid fa-terminal"></i> root@opik:~# cat about.txt</h2>
+            <p>Seorang profesional IT yang mengombinasikan kekuatan administrasi arsitektur sistem Linux dengan seni pengembangan website modern. Berbekal sertifikasi kelas dunia dari Red Hat Academy, saya berfokus pada otomasi infrastruktur skala besar menggunakan Ansible dan membangun aplikasi antarmuka web interaktif yang efisien.</p>
         </section>
 
-        <!-- KEAHLIAN / SKILL -->
+        <!-- KEAHLIAN TEKNOLOGI -->
         <section id="skill">
-            <h2>💻 Keahlian Teknologi</h2>
+            <h2><i class="fa-solid fa-layer-group"></i> keahlian_teknologi.sh</h2>
             <div class="skills-grid">
-                <div class="skill-card" style="border-bottom: 3px solid #e34f26;">HTML</div>
-                <div class="skill-card" style="border-bottom: 3px solid #1572b6;">CSS</div>
-                <div class="skill-card" style="border-bottom: 3px solid #f7df1e;">JavaScript</div>
-                <div class="skill-card" style="border-bottom: 3px solid #10b981;">Linux Admin</div>
-                <div class="skill-card" style="border-bottom: 3px solid #cc0000;">Ansible</div>
-                <div class="skill-card" style="border-bottom: 3px solid #3776ab;">Python</div>
-            </div>
-        </section>
-
-        <!-- LAYANAN JASA / SERVICES -->
-        <section id="layanan">
-            <h2>🛠️ Layanan Jasa & Solusi</h2>
-            <p>Berikut adalah beberapa layanan profesional yang bisa saya kerjakan untuk membantu proyek atau bisnis Anda:</p>
-            <div class="services-list">
-                <div class="service-item">
-                    <div class="service-title">1. Pembuatan Website Portofolio & UMKM</div>
-                    <div class="service-desc">Mendesain dan membangun website landing page modern berbasis HTML, CSS, dan JavaScript yang responsif untuk HP dan laptop.</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-title">2. Konfigurasi & Setup Server Linux</div>
-                    <div class="service-desc">Membantu instalasi, konfigurasi dasar, keamanan, dan pengelolaan sistem operasi server berbasis Linux (Red Hat/Ubuntu/Debian).</div>
-                </div>
-                <div class="service-item">
-                    <div class="service-title">3. Otomasi Server dengan Ansible</div>
-                    <div class="service-desc">Membuat skrip otomasi (Playbook Ansible) untuk mempercepat konfigurasi server massal, instalasi aplikasi, dan manajemen sistem secara efisien.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERTIFIKASI RED HAT ACADEMY -->
-        <section id="sertifikasi">
-            <h2>🏆 Kredensial Red Hat Academy</h2>
-            <div class="cert-list">
-                <!-- 1 -->
-                <div class="cert-item">
-                    <div>
-                        <div class="cert-title">Linux Automation with Ansible 9.0 (RH294)</div>
-                        <div class="cert-meta">Red Hat Academy &bull; Agu 2026</div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
-                </div>
-                <!-- 2 -->
-                <div class="cert-item">
-                    <div>
-                        <div class="cert-title">Red Hat System Administration II 9.3 (RH134)</div>
-                        <div class="cert-meta">Red Hat Academy &bull; Nov 2025</div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
-                </div>
-                <!-- 3 -->
-                <div class="cert-item python">
-                    <div>
-                        <div class="cert-title">Introduction to Python Programming 9.0 (AD141)</div>
-                        <div class="cert-meta">Red Hat Academy &bull; Okt 2025</div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert" style="background: #3776ab;">Verifikasi</a>
-                </div>
-                <!-- 4 -->
-                <div class="cert-item linux">
-                    <div>
-                        <div class="cert-title">Getting Started with Linux Fundamentals 9.1 (RH104)</div>
-                        <div class="cert-meta">Red Hat Academy &bull; Okt 2025</div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert" style="background: #fbbf24; color: #000;">Verifikasi</a>
-                </div>
-                <!-- 5 -->
-                <div class="cert-item">
-                    <div>
-                        <div class="cert-title">Red Hat System Administration I 9.3 (RH124)</div>
-                        <div class="cert-meta">Red Hat Academy &bull; Okt 2025</div>
-                    </div>
-                    <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- KONTAK -->
-        <section id="kontak">
-            <h2>✉️ Hubungan Kontak</h2>
-            <p style="text-align: center; margin-bottom: 25px;">Tertarik untuk bekerja sama, menyewa jasa, atau membangun jaringan profesi? Silakan hubungi saya.</p>
-            <div class="btn-container">
-                <a href="mailto:opikpratamaputra19@gmail.com" class="btn-contact">Hubungi Saya Sekarang</a>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <p>&copy; 2026 Portofolio Opik. Dibuat dengan HTML & CSS.</p>
-        </footer>
-
-    </div>
-</body>
-</html>
+                <div class="skill-card"><i class="fa-brands fa-html5" style="color: #e34f26;"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="fa-brands fa-css3-alt" style="color: #1572b6;"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="fa-brands fa-js" style="color: #f7df1e;"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fa-solid fa-linux" style="color: #f1bd1a;"></i><span>Linux Admin</span></div>
+                <div class="skill-card"><i class="fa-brands fa-redhat" style="color: #cc0000;"></i><span>Ansible</span></div>
