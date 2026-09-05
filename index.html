@@ -26,6 +26,13 @@
         section p { color: var(--muted); font-size: 0.95rem; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 15px; }
         .skill-card { background: #1e293b; padding: 12px; border-radius: 8px; text-align: center; font-size: 0.9rem; font-weight: 600; color: #e2e8f0; }
+        
+        /* Gaya List Layanan Jasa */
+        .services-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
+        .service-item { background: #1e293b; padding: 15px; border-radius: 8px; border: 1px solid var(--border); }
+        .service-title { font-size: 1rem; font-weight: 600; color: #ffffff; margin-bottom: 4px; }
+        .service-desc { font-size: 0.88rem; color: var(--muted); }
+
         .cert-list { display: flex; flex-direction: column; gap: 12px; margin-top: 15px; }
         .cert-item { background: #1e293b; padding: 15px; border-radius: 8px; border-left: 4px solid #cc0000; display: flex; flex-direction: column; gap: 10px; }
         .cert-item.python { border-left-color: #3776ab; }
@@ -48,13 +55,13 @@
         <header>
             <img src="pai.jpg.jpg" alt="Foto Profil Opik" class="profile-img">
             <h1>Halo, Saya Opik 👋</h1>
-            <div class="subtitle">Junior Web Developer & Network Enthusiast</div>
+            <div class="subtitle">Web Developer & Linux System Administrator</div>
         </header>
 
         <!-- TENTANG SAYA -->
         <section id="tentang">
             <h2>👤 Tentang Saya</h2>
-            <p>Halo, saya Opik! Seorang antusias teknologi yang sedang mendalami dunia <em>Web Development</em>. Saya senang membangun halaman web yang interaktif menggunakan HTML, CSS, dan JavaScript, serta mengeksplorasi konsep dasar jaringan komputer untuk memperluas wawasan digital saya.</p>
+            <p>Halo, saya Opik! Seorang antusias teknologi yang bergerak di bidang <em>Web Development</em> dan Administrasi Sistem. Dengan bekal sertifikasi internasional dari Red Hat Academy, saya berfokus pada pembangunan infrastruktur web yang stabil, otomasi server menggunakan Ansible, serta pembuatan halaman website yang interaktif.</p>
         </section>
 
         <!-- KEAHLIAN / SKILL -->
@@ -64,22 +71,37 @@
                 <div class="skill-card" style="border-bottom: 3px solid #e34f26;">HTML</div>
                 <div class="skill-card" style="border-bottom: 3px solid #1572b6;">CSS</div>
                 <div class="skill-card" style="border-bottom: 3px solid #f7df1e;">JavaScript</div>
-                <div class="skill-card" style="border-bottom: 3px solid #10b981;">Jaringan</div>
+                <div class="skill-card" style="border-bottom: 3px solid #10b981;">Linux Admin</div>
+                <div class="skill-card" style="border-bottom: 3px solid #cc0000;">Ansible</div>
+                <div class="skill-card" style="border-bottom: 3px solid #3776ab;">Python</div>
             </div>
         </section>
 
-        <!-- PROYEK LATIHAN -->
-        <section id="proyek">
-            <h2>📂 Proyek Mandiri</h2>
-            <p>Saat ini saya sedang berfokus merancang portofolio profesional ini dan bersiap mengembangkannya ke dalam proyek aplikasi web yang lebih dinamis serta interaktif di masa depan.</p>
+        <!-- LAYANAN JASA / SERVICES -->
+        <section id="layanan">
+            <h2>🛠️ Layanan Jasa & Solusi</h2>
+            <p>Berikut adalah beberapa layanan profesional yang bisa saya kerjakan untuk membantu proyek atau bisnis Anda:</p>
+            <div class="services-list">
+                <div class="service-item">
+                    <div class="service-title">1. Pembuatan Website Portofolio & UMKM</div>
+                    <div class="service-desc">Mendesain dan membangun website landing page modern berbasis HTML, CSS, dan JavaScript yang responsif untuk HP dan laptop.</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-title">2. Konfigurasi & Setup Server Linux</div>
+                    <div class="service-desc">Membantu instalasi, konfigurasi dasar, keamanan, dan pengelolaan sistem operasi server berbasis Linux (Red Hat/Ubuntu/Debian).</div>
+                </div>
+                <div class="service-item">
+                    <div class="service-title">3. Otomasi Server dengan Ansible</div>
+                    <div class="service-desc">Membuat skrip otomasi (Playbook Ansible) untuk mempercepat konfigurasi server massal, instalasi aplikasi, dan manajemen sistem secara efisien.</div>
+                </div>
+            </div>
         </section>
 
         <!-- SERTIFIKASI RED HAT ACADEMY -->
         <section id="sertifikasi">
             <h2>🏆 Kredensial Red Hat Academy</h2>
             <div class="cert-list">
-                
-                <!-- 1. RH294 -->
+                <!-- 1 -->
                 <div class="cert-item">
                     <div>
                         <div class="cert-title">Linux Automation with Ansible 9.0 (RH294)</div>
@@ -87,8 +109,7 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
                 </div>
-
-                <!-- 2. RH134 -->
+                <!-- 2 -->
                 <div class="cert-item">
                     <div>
                         <div class="cert-title">Red Hat System Administration II 9.3 (RH134)</div>
@@ -96,8 +117,7 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
                 </div>
-
-                <!-- 3. AD141 -->
+                <!-- 3 -->
                 <div class="cert-item python">
                     <div>
                         <div class="cert-title">Introduction to Python Programming 9.0 (AD141)</div>
@@ -105,8 +125,7 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert" style="background: #3776ab;">Verifikasi</a>
                 </div>
-
-                <!-- 4. RH104 -->
+                <!-- 4 -->
                 <div class="cert-item linux">
                     <div>
                         <div class="cert-title">Getting Started with Linux Fundamentals 9.1 (RH104)</div>
@@ -114,8 +133,7 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert" style="background: #fbbf24; color: #000;">Verifikasi</a>
                 </div>
-
-                <!-- 5. RH124 -->
+                <!-- 5 -->
                 <div class="cert-item">
                     <div>
                         <div class="cert-title">Red Hat System Administration I 9.3 (RH124)</div>
@@ -123,14 +141,13 @@
                     </div>
                     <a href="https://credly.com" target="_blank" class="btn-cert">Verifikasi</a>
                 </div>
-
             </div>
         </section>
 
         <!-- KONTAK -->
         <section id="kontak">
             <h2>✉️ Hubungan Kontak</h2>
-            <p style="text-align: center; margin-bottom: 25px;">Tertarik untuk berkolaborasi atau sekadar membangun jaringan profesi? Silakan hubungi saya.</p>
+            <p style="text-align: center; margin-bottom: 25px;">Tertarik untuk bekerja sama, menyewa jasa, atau membangun jaringan profesi? Silakan hubungi saya.</p>
             <div class="btn-container">
                 <a href="mailto:opikpratamaputra19@gmail.com" class="btn-contact">Hubungi Saya Sekarang</a>
             </div>
